@@ -26,6 +26,11 @@ class PostController extends Controller
         return redirect('post');
     }
 
+    public function show($id)
+    {
+        $post = Post::find($id);
+        return view('show')->with('post',$post);
+    }
 
     public function edit($id)
     {
